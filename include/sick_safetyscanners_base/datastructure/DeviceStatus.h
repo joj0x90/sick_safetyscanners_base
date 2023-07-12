@@ -35,8 +35,8 @@
 #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
 #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
 
+#include <cstdint>
 #include <iostream>
-
 
 namespace sick {
 namespace datastructure {
@@ -44,45 +44,42 @@ namespace datastructure {
 /*!
  * \brief Class containing the device status of a laser scanner.
  */
-class DeviceStatus
-{
-public:
-  enum e_sopas_device_status
-  {
-    E_UNKNOWN,
-    E_START_UP,
-    E_SERVICE_MODE,
-    E_NORMAL_OPERATION,
-    E_SUSPENDED_OPERATION,
-    E_SERVICE_RECOMMENDED,
-    E_SERVICE_REQUIRED,
-    E_RECOVERABLE_ERROR,
-    E_FATAL_ERROR
-  };
-  /*!
-   * \brief Constructor of the device status.
-   */
-  DeviceStatus();
+class DeviceStatus {
+   public:
+    enum e_sopas_device_status {
+        E_UNKNOWN,
+        E_START_UP,
+        E_SERVICE_MODE,
+        E_NORMAL_OPERATION,
+        E_SUSPENDED_OPERATION,
+        E_SERVICE_RECOMMENDED,
+        E_SERVICE_REQUIRED,
+        E_RECOVERABLE_ERROR,
+        E_FATAL_ERROR
+    };
+    /*!
+     * \brief Constructor of the device status.
+     */
+    DeviceStatus();
 
-  /*!
-   * \brief Gets the device status for the scanner.
-   *
-   * \returns The device status for the scanner.
-   */
-  uint8_t getDeviceStatus() const;
-  /*!
-   * \brief Sets the device status for the scanner.
-   *
-   * \param device_status The device status for the scanner.
-   */
-  void setDeviceStatus(const uint8_t& device_status);
+    /*!
+     * \brief Gets the device status for the scanner.
+     *
+     * \returns The device status for the scanner.
+     */
+    uint8_t getDeviceStatus() const;
+    /*!
+     * \brief Sets the device status for the scanner.
+     *
+     * \param device_status The device status for the scanner.
+     */
+    void setDeviceStatus(const uint8_t& device_status);
 
-private:
-  uint8_t m_device_status;
+   private:
+    uint8_t m_device_status;
 };
 
+}  // namespace datastructure
+}  // namespace sick
 
-} // namespace datastructure
-} // namespace sick
-
-#endif // SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
+#endif  // SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
